@@ -20,6 +20,6 @@ steps:
   displayName: 'Build DotNet'
   inputs:
     command: 'build'
-    arguments: '--no-restore --configuration Release'
+    arguments: '--configuration Release'
     projects: '**/*.csproj'
 
