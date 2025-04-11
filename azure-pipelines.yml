@@ -11,6 +11,11 @@ pool:
  name: 'local_PC'
 
 steps:
+- task: NuGetCommand@2
+  displayName: 'Run Nuget command'
+  inputs:
+    command: 'restore'
+    
 - task: DotNetCoreCLI@1
   displayName: 'Build DotNet'
   inputs:
