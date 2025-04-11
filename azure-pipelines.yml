@@ -11,9 +11,10 @@ pool:
  name: 'local_PC'
 
 steps:
-- task: NuGetToolInstaller@1
-
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@1
+  displayName: 'Build DotNet'
   inputs:
-    restoreSolution: '$(solution)'
+    command: 'build'
+    arguments: '--no-restore --configuration Release'
+    projects: '**/*.csproj'
 
