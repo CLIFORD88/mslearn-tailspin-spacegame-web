@@ -22,10 +22,9 @@ steps:
     command: 'build'
     arguments: '--configuration Release'
     projects: '**/*.csproj'
-- task: ArchiveFiles@2
+
+- task: PublishPipelineArtifact@1
   inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
-    includeRootFolder: true
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    replaceExistingArchive: true
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'artifact'
+    publishLocation: 'pipeline'
