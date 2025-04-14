@@ -8,7 +8,7 @@ trigger:
 
 pool:
   #vmImage: 'windows-latest'
- name: 'local_PC'
+  name: 'local_PC'
 
 steps:
 - task: NuGetCommand@2
