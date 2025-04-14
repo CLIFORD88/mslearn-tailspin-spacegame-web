@@ -2,8 +2,8 @@ trigger:
 - '*'
 
 pool:
-  vmImage: ubuntu-latest
-
+  #vmImage: ubuntu-latest
+  name: 'local_PC'
 variables:
   buildConfiguration: 'Release'
 
