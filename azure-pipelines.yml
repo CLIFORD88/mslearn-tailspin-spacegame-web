@@ -8,7 +8,7 @@ trigger:
 
 pool:
   #vmImage: 'windows-latest'
-  name: 'almalinux'
+  name: 'onpremise'
 
 steps:
 - task: NuGetCommand@2
