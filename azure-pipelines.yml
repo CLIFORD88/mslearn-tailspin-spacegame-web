@@ -3,7 +3,11 @@ trigger:
 
 pool:
   #vmImage: ubuntu-latest
+<<<<<<< HEAD
   name: 'onpremise'
+=======
+  name: 'local_PC'
+>>>>>>> 8881a7564adf7d5f3b450c745eb14abd1adeae83
 
 variables:
   buildConfiguration: 'Release'
