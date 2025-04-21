@@ -23,17 +23,17 @@ steps:
 - script: './node_modules/.bin/node-sass Tailspin.SpaceGame.Web/wwwroot --output Tailspin.SpaceGame.Web/wwwroot'
   displayName: 'Compile Sass assets'
 
-# Install gulp-cli globally to ensure it's available for the pipeline
+# Make sure gulp is in the package.json and use the local version
 - task: Npm@1
-  displayName: 'Install Gulp CLI'
+  displayName: 'Install gulp locally'
   inputs:
     command: 'custom'
-    customCommand: 'install -g gulp-cli'
+    customCommand: 'install gulp --save-dev'
 
-# Use script task to run gulp instead of the gulp task
-- script: 'gulp'
+# Use the local gulp from node_modules
+- script: './node_modules/.bin/gulp'
   displayName: 'Run gulp tasks'
-  # If you need to run specific gulp tasks, you can specify them like: 'gulp task1 task2'
+  # If you need specific gulp tasks, use: './node_modules/.bin/gulp task1 task2'
 
 - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
   displayName: 'Write build info'
